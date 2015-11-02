@@ -1,0 +1,35 @@
+extends layout
+
+block scripts
+   script(src='/scripts/rcremote.js')
+
+block content
+   h4= title
+   .row
+      #client.col.s12.m12.l12
+      .col.s12.m12.l12
+         br
+      #content.col.s12.m12.l12(style='height: 30vh; overflow-y: auto')
+
+      .input-field.col.s6.m6.l6
+         input#user-name(type='text', value='anonymous')
+         label(for='user-name') User Name
+      .input-field.col.s6.m6.l6
+         input#execution-time.validate(type='number', value=5)
+         label(for='execution-time') Time
+      .col.s12.m12.l12
+         .row
+            .col.s4.offset-s4.m4.offset-m4.l4.offset-l4(style='text-align: center')
+               button#input-up.waves-effect.waves-light.btn-large
+                  i.fa.fa-fw.fa-arrow-up
+            .col.s12.m12.l12
+               br
+            .col.s4.m4.l4(style='text-align: center')
+               button#input-left.waves-effect.waves-light.btn-large
+                  i.fa.fa-fw.fa-arrow-left
+            .col.s4.m4.l4(style='text-align: center')
+               button#input-down.waves-effect.waves-light.btn-large
+                  i.fa.fa-fw.fa-arrow-down
+            .col.s4.m4.l4(style='text-align: center')
+               button#input-right.waves-effect.waves-light.btn-large
+                  i.fa.fa-fw.fa-arrow-right

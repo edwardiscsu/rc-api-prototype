@@ -1,0 +1,13 @@
+extends layout
+
+block scripts
+   script(src='/scripts/rcclient.js')
+
+block content
+   h4= title
+   .row
+      #client.col.s12.m12.l12
+      .col.s12.m12.l12
+         br
+      #content.col.s12.m12.l12(style='height: 30vh; overflow-y: auto')
+

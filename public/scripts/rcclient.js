@@ -2,7 +2,7 @@ window.onload = function() {
 
     var clients = [];
     var messages = [];
-    var socket = io.connect('http://localhost:3000');
+    var socket = io.connect(getSocketUrl());
 
     var carPosition = document.getElementById("car-position");
     var client  = document.getElementById("client");
@@ -59,6 +59,11 @@ window.onload = function() {
 
     function getCommand(message) {
         return message.substring(message.indexOf(')') + 1, message.indexOf('['));
+    }
+
+    function getSocketUrl() {
+        var index = document.URL.indexOf("/clients");
+        return document.URL.substring(0,index);
     }
 }
 

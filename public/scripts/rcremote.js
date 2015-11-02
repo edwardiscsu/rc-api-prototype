@@ -2,7 +2,7 @@ window.onload = function() {
 
     var clients = [];
     var messages = [];
-    var socket = io.connect('http://localhost:3000');
+    var socket = io.connect(getSocketUrl());
 
     var upButton    = document.getElementById("input-up");
     var leftButton  = document.getElementById("input-left");
@@ -53,5 +53,10 @@ window.onload = function() {
         var text = moment().format("hh:mm:ssA") + ": (" + userName.value + ") "
             + "right" + "[" + executionTime.value.toString() + "]";
         socket.emit('send', { message: text });
+    }
+
+    function getSocketUrl() {
+        var index = document.URL.indexOf("/remotes");
+        return document.URL.substring(0,index);
     }
 }

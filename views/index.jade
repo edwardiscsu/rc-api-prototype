@@ -2,4 +2,7 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  #content(style='width: 500px; height: 300px; margin: 0')
+  .controls
+      input#field(style='width:350px;')
+      input#send(type='button', value='send')
